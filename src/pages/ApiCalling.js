@@ -8,7 +8,7 @@ const ApiCalling = () => {
 
   useEffect(() => {
     dispatch(fetchData());
-  }, [dispatch]);
+  }, []);
 
   console.log(data, "SACHINssss");
 
@@ -23,10 +23,10 @@ const ApiCalling = () => {
     <div className="bg-blue-500 text-white p-4">
       <h1 className="text-2xl font-bold">Your Tailwind-styled Component</h1>
       <p className="mt-2">This is a Tailwind CSS example.</p>
-      {data
+      {data && data.length > 0
         ? data.map((item) => (
             <div className="" key={item.id}>
-              <p>{item.name}</p>
+              <p className="text-black">{item.title}</p>
             </div>
           ))
         : "No-data"}
